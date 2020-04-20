@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-#  before_action :authenticate_user! #No deja entrar a nada si no estoy logeado
 
   def index
     @posts = Post.order("created_at DESC")
@@ -47,8 +46,6 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :content, :author)
-    # @params[:author]= current_user.email
-    # puts "los parametros son #{@params}"
   end
 
 end
