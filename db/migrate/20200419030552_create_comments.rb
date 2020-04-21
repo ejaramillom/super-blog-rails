@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
       t.string :author
       t.text :comment
 
+
       t.timestamps
     end
   end

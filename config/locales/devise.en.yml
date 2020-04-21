@@ -1,3 +1,4 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
 en:
   devise:
@@ -7,14 +8,14 @@ en:
       send_paranoid_instructions: "Si su correo existe en nuestra base de datos, en algunos minutos recibira un correo para confirmar su dirección."
     failure:
       already_authenticated: "Usted ya está autenticado."
-      inactive: "Your account is not activated yet."
+      inactive: "La cuenta aún no esta activa."
       invalid: "Información %{authentication_keys} o contraseña incorrecta."
       locked: "Su cuenta esta bloqueada."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "Su sesión expiró. Ingrese nuevamente."
       unauthenticated: "Necesita registrarse o ingresar para continuar."
-      unconfirmed: "You have to confirm your email address before continuing."
+      unconfirmed: "Debe confirmar su cuenta para poder cotinuar."
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
@@ -44,8 +45,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirm link to confirm your new email address."
       updated: "Your account has been updated successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "Ingresó correctamente."
+      signed_out: "Salió correctamente."
       already_signed_out: "Signed out successfully."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
@@ -59,5 +60,5 @@ en:
       not_found: "Disculpe! no encontramos lo que buscaba"
       not_locked: "was not locked"
       not_saved:
-        one: "1 error prohibe %{resource} que sea guardado:"
+        one: "Algo como su %{resource} nos mostró un problema para que sea guardado:"
         other: "%{count} errors prohibited this %{resource} from being saved:"

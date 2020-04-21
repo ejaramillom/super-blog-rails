@@ -21,5 +21,7 @@ end
   private
   def comment_params
     params.require(:comment).permit(:comment, :author)
+    # @params[:author]= current_user.email
+    # puts "los parametros son #{@params}"
   end
 end
