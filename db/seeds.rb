@@ -17,4 +17,10 @@ postDos = Post.create(title: "Llega la PS5", author: "Mark Cerny",
   las PlayStation 4 y juegos de PlayStation VR, y soporte para juegos digitales y basados
   en disco.")
 
-postTres = Post.create(title: "Sinopsis ASESINATO EN EL EXPRESO DE ORIENTE", author: "Pedro Picapiedra", content: "Lo que comienza como un espléndido viaje por tren a lo largo de Europa, se convierte en un abrir y cerrar de ojos en uno de los misterios más distinguidos, intrigantes y emocionantes jamás contados. De la novela de la autora de best-sellers Agatha Christie, “Asesinato en el Expreso de Oriente” narra la historia de trece extraños varados en un tren, donde todos son sospechosos. Un hombre luchará contra reloj para resolver el enigma antes de que el asesino vuelva a atacar.")
+postTres = Post.create(title: "Avances en computadores cuánticos", author: "Paul Benioff",
+  content: "Quantum computing is the use of quantum-mechanical phenomena such as superposition
+  and entanglement to perform computation. Computers that perform quantum computation are known
+  as a quantum computers. Quantum computers are believed to be able to solve certain
+  computational problems, such as integer factorization (which underlies RSA encryption),
+  significantly faster than classical computers. The study of quantum computing is a subfield
+  of quantum information science.")

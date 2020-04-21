@@ -8,22 +8,13 @@ end
 ruby '2.5.5'
 gem 'rails', '~> 6.0.2'
 gem 'sqlite3'
-gem 'puma', '~> 3.7'
-gem 'sass-rails', '~> 5.0'
+gem 'puma', '~> 4.1'
+gem 'sass-rails', '~> 6'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
+gem 'webpacker', '~> 4.0'
+gem 'coffee-rails'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-end
-
-group :development do
-end
-
+gem 'jbuilder', '~> 2.7'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'devise'
@@ -32,3 +23,12 @@ gem 'jquery-rails'
 gem 'time_diff'
 gem 'redcarpet'
 gem 'dotiw'
+
+group :development, :test do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'capybara', '~> 2.15'
+  gem 'selenium-webdriver'
+end
+
+group :development do
+end

@@ -1,48 +1,34 @@
 <div class="container">
   <%= link_to "Volver", posts_path, class: "link"%>
+
   <div class="contenedor">
-    <%renderer = Redcarpet::Render::HTML.new(no_links: true, hard_wrap: true)%>
-    <%markdown = Redcarpet::Markdown.new(renderer, extensions = {})%>
+    <% renderer = Redcarpet::Render::HTML.new( no_links: true, hard_wrap: true )%>
+    <% markdown = Redcarpet::Markdown.new( renderer, extensions = {} )%>
 
+    <h1><%= @post.title %></h1>
+    <% tiempo = Time.diff( @post.created_at, Time.now ) %>
+    <% aproximacion = distance_of_time_in_words( Time.now, Time.now + tiempo[:year].years + tiempo[:month].months + tiempo[:day].days + tiempo[:hour].hours, scope: 'datetime.distance_in_words' ) %>
 
-    <h1><%=@post.title %></h1>
-    <% time_diff_components = Time.diff(@post.created_at, Time.now) %>
-    <% aproximacion = distance_of_time_in_words(Time.now, Time.now + time_diff_components[:year].years + time_diff_components[:month].months + time_diff_components[:day].days + time_diff_components[:hour].hours )%>
-    <% aproximacion.gsub( 'day', 'día' ) %>
-    <% aproximacion.gsub( 'months', 'meses') %>
-    <% aproximacion.gsub( 'hour', 'hora' ) %>
-    <% aproximacion.gsub( 'minute', 'minuto' ) %>
-    <% aproximacion.gsub( 'and', 'y' )  %>
-    <% aproximacion.gsub( 'less', 'menos' ) %>
-    <% aproximacion.gsub( 'than', 'de' ) %>
-    <% aproximacion.gsub( 'second', 'segundo' )  %>
-    <p class = "info">Publicado por <b><%= @post.author %></b> hace aproximadamente <b> <%=aproximacion %></b></p>
+    <p class = "info">Publicado por <b><%= @post.author %></b> hace aproximadamente <b> <%= aproximacion %></b></p>
     <%=markdown.render(@post.content).html_safe%>
   </div>
-
 
   <h2>Comentarios</h2>
   <div class="comment_section">
     <% if @comments.empty?%>
       <p>No hay comentarios en este post</p>
       <%else%>
-    <% @comments.each do |commentario| %>
-      <div class="comentario">
-      <% time_diff_components = Time.diff(commentario.created_at, Time.now) %>
-      <% aproximacion = distance_of_time_in_words(Time.now, Time.now + time_diff_components[:year].years + time_diff_components[:month].months + time_diff_components[:day].days + time_diff_components[:hour].hours )%>
-      <% aproximacion.gsub( 'day', 'día' ) %>
-      <% aproximacion.gsub( 'months', 'meses') %>
-      <% aproximacion.gsub( 'hour', 'hora' ) %>
-      <% aproximacion.gsub( 'minute', 'minuto' ) %>
-      <% aproximacion.gsub( 'and', 'y' )  %>
-      <% aproximacion.gsub( 'less', 'menos' ) %>
-      <% aproximacion.gsub( 'than', 'de' ) %>
-      <% aproximacion.gsub( 'second', 'segundo' )  %>
-      <p>Publicado por <b><%=commentario.author%></b> hace aproximadamente <b> <%=aproximacion %></b></p>
-      <%=markdown.render(commentario.comment).html_safe%>
+    <% @comments.each do |comment| %>
+      <div class= "comentario" >
+      <% tiempo = Time.diff( comment.created_at, Time.now ) %>
+      <% aproximacion = distance_of_time_in_words( Time.now, Time.now + tiempo[:year].years + tiempo[:month].months + tiempo[:day].days + tiempo[:hour].hours, scope: 'datetime.distance_in_words' ) %>
+
+      <p> Publicado por <b> <%= comment.author %> </b> hace aproximadamente <b> <%= aproximacion %> </b></p>
+
+      <%= markdown.render( comment.comment ).html_safe %>
       <% if user_signed_in? %>
-        <% if (commentario.author == current_user.email) || @post.author == current_user.email %>
-          <p><%= link_to 'Eliminar Comentario', post_comment_path(@post, commentario), :method => :delete, :data => { :confirm => '¿Estás seguro?' } %> </p>
+        <% if ( comment.author == current_user.email ) || @post.author == current_user.email %>
+          <p><%= link_to 'Eliminar Comentario', post_comment_path( @post, comment ), :method => :delete, :data => { :confirm => '¿Estás seguro?' } %> </p>
         <%end%>
       <%end%>
 
@@ -51,8 +37,8 @@
     <%end%>
 
     <% if user_signed_in? %>
-    <h2>Agrega tu comentario</h2>
-    <%= form_for([@post, @post.comments.build]) do |f| %>
+    <h2> Agrega un comentario </h2>
+    <%= form_for( [@post, @post.comments.build] ) do |f| %>
       <div>
         <%= f.text_area :comment, class: "cuerpocoment"  %>
       </div>
@@ -63,9 +49,5 @@
       <% end %>
     <% end %>
 
-
-
-</div>
-
-
+  </div>
 </div>

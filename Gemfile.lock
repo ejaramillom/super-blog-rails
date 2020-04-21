@@ -80,9 +80,9 @@ GEM
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
     childprocess (3.0.0)
-    coffee-rails (4.2.2)
+    coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
+      railties (>= 5.2.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -132,8 +132,11 @@ GEM
     orm_adapter (0.5.0)
     popper_js (1.16.0)
     public_suffix (4.0.4)
-    puma (3.12.4)
+    puma (4.3.3)
+      nio4r (~> 2.0)
     rack (2.2.2)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.2)
@@ -176,16 +179,22 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.1.0)
-      railties (>= 5.2.0)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
+    sass-rails (6.0.0)
+      sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.3.0)
+      ffi (~> 1.9)
+    sassc (2.3.0-x64-mingw32)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sprockets (3.7.2)
+    sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.1)
@@ -210,6 +219,10 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.8)
       rack (>= 2.0.6)
+    webpacker (4.2.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -225,22 +238,23 @@ DEPENDENCIES
   bcrypt!
   bootstrap (~> 4.0.0.beta2.1)
   byebug
-  capybara (~> 2.13)
-  coffee-rails (~> 4.2)
+  capybara (~> 2.15)
+  coffee-rails
   devise
   dotiw
-  jbuilder (~> 2.5)
+  jbuilder (~> 2.7)
   jquery-rails
-  puma (~> 3.7)
+  puma (~> 4.1)
   rails (~> 6.0.2)
   redcarpet
-  sass-rails (~> 5.0)
+  sass-rails (~> 6)
   selenium-webdriver
   sqlite3
   time_diff
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  webpacker (~> 4.0)
 
 RUBY VERSION
    ruby 2.5.5p157
