@@ -81,8 +81,6 @@ en:
       days: dias
       months: meses
       years: años
-  attributes:
-    and: "y"
 
   devise:
     confirmations:
@@ -159,3 +157,55 @@ en:
     attributes:
       user:
         password: "La contraseña"
+    datetime:
+      distance_in_words:
+        about_x_hours:
+          one: aproximadamente una hora
+          other: aproximadamente %{count} horas
+        about_x_months:
+          one: aproximadamente un mes
+          other: aproximadamente %{count} meses
+        about_x_years:
+          one: aproximadamente un año
+          other: aproximadamente %{count} años
+        almost_x_years:
+          one: casi 1 año
+          other: casi %{count} años
+        half_a_minute: medio minuto
+        less_than_x_seconds:
+          one: menos de 1 segundo
+          other: menos de %{count} segundos
+        less_than_x_minutes:
+          one: menos de un minuto
+          other: menos de %{count} minutos
+        over_x_years:
+          one: más de 1 año
+          other: mś de %{count} años
+        x_seconds:
+          one: 1 segundo
+          other: "%{count} segundo"
+        x_minutes:
+          one: 1 minuto
+          other: "%{count} minutos"
+        x_days:
+          one: 1 dia
+          other: "%{count} dias"
+        x_months:
+          one: 1 mes
+          other: "%{count} meses"
+        x_years:
+          one: 1 año
+          other: "%{count} años"
+        prompts:
+          second: segundo
+          minute: minuto
+          hour: hora
+          day: dia
+          month: mes
+          year: año
+          seconds: segundos
+          minutes: minutos
+          hours: horas
+          days: dias
+          months: meses
+          years: años
