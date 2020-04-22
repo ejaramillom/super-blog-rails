@@ -12,7 +12,7 @@
     <div class="form-group">
       <%= f.label "Contraseña" %>
       <% if @minimum_password_length %>
-      <em>(mínimo <%= @minimum_password_length %> caracteres)</em>
+      <em>( mínimo <%= @minimum_password_length %> caracteres )</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "off", class: "col-md-6 mx-auto" %>
     </div>
